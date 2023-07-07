@@ -46,15 +46,13 @@ public class CatTest {
     public void testSetName() {
         // Given (cat and expected output)
         String expected = "ewwww";
-        Cat cat = new Cat("", new Date(), 0);
+        Cat cat = new Cat(null, null, null);
 
         // When (name changes)
         cat.setName(expected);
 
-        // When (we retrieve data from the cat)
-        String retrievedName = cat.getName();
-
         // Then (we expect the given data, to match the retrieved data)
+        String retrievedName = cat.getName();
         Assert.assertEquals(expected, retrievedName);
     }
 
@@ -62,15 +60,13 @@ public class CatTest {
     public void testSetBirthDate() {
         // Given (cat and expected output)
         Date expected = new Date(2015, 05, 26);
-        Cat cat = new Cat("", new Date(), 0);
+        Cat cat = new Cat(null, null, null);
 
         // When (birthdate changes)
         cat.setBirthDate(expected);
 
-        // When (we retrieve data from the cat)
-        Date retrievedBirthDate = cat.getBirthDate();
-
         // Then (we expect the given data, to match the retrieved data)
+        Date retrievedBirthDate = cat.getBirthDate();
         Assert.assertEquals(expected, retrievedBirthDate);
     }
 
@@ -78,7 +74,7 @@ public class CatTest {
     public void testSpeak() {
         // Given (cat and expected)
         String expected = "meow!";
-        Cat cat = new Cat("", new Date(), 0);
+        Cat cat = new Cat(null, null, null);
 
         // When (we make the cat speak)
         String result = cat.speak();
@@ -91,7 +87,7 @@ public class CatTest {
     public void testEat() {
         // Given (cat and expected value)
         Integer expectedMealsEaten = 1;
-        Cat cat = new Cat("", new Date(), 0);
+        Cat cat = new Cat(null, null, null);
 
         // When (we make the cat eat)
         cat.eat(new Food());
@@ -105,10 +101,8 @@ public class CatTest {
 
     @Test
     public void testGetID1() {
-        // Given (cat data)
+        // Given (cat with an ID)
         Integer expectedID = 0;
-
-        // When (a cat is constructed)
         Cat cat = new Cat("", new Date(), expectedID);
 
         // When (get the ID of the cat)
@@ -120,9 +114,7 @@ public class CatTest {
     @Test
     public void testGetID2() {
         // Given (cat data)
-        Integer expectedID = 13;
-
-        // When (a cat is constructed)
+        Integer expectedID = null;
         Cat cat = new Cat("", new Date(), expectedID);
 
         // When (get the ID of the cat)
@@ -131,6 +123,19 @@ public class CatTest {
         // Then (we expect the given data, to match the retrieved data)
         Assert.assertEquals(expectedID, retrievedID);
     }
+    @Test
+    public void testGetID3() {
+        // Given (cat data)
+        Integer expectedID = 13;
+        Cat cat = new Cat("", new Date(), expectedID);
+
+        // When (get the ID of the cat)
+        Integer retrievedID = cat.getId();
+
+        // Then (we expect the given data, to match the retrieved data)
+        Assert.assertEquals(expectedID, retrievedID);
+    }
+
 
     @Test
     public void testAnimalInheritance() {
