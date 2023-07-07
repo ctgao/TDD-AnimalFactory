@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Dog;
-import rocks.zipcodewilmington.animals.Dog;
 import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
